@@ -21,41 +21,6 @@ export class UserListComponent implements OnInit {
   searchControl: FormControl = new FormControl();
   users: any;
   total_count: any;
-  productSales = [
-    {
-      name: 'ram',
-      value: 30,
-    },
-    {
-      name: 'pro-2',
-      value: 100,
-    },
-    {
-      name: 'pro-3',
-      value: 150,
-    },
-    {
-      name: 'pro-4',
-      value: 210,
-    },
-    {
-      name: 'pro-5',
-      value: 300,
-    },
-    {
-      name: 'pro-6',
-      value: 50,
-    },
-    {
-      name: 'pro-7',
-      value: 20,
-    },
-    {
-      name: 'pro-8',
-      value: 100,
-    },
-  ];
-
   usersFollowers = [];
 
   getBarGraphData: any;
@@ -73,7 +38,6 @@ export class UserListComponent implements OnInit {
           this.filterText?.length > 2
             ? this.apiNode.searchUsers(this.filterText)
             : new Observable((observer) => {
-                // observable execution
                 observer.next('Nothing to do- no users to find');
                 observer.complete();
               })
@@ -93,7 +57,6 @@ export class UserListComponent implements OnInit {
           this.users.forEach((userName) => {
             new Promise((resolve, reject) => {
               this.apiNode.getUserFollowers(userName.login).subscribe((res) => {
-                //console.log('followers-----11>', res.length);
 
                 resolve(res.length);
               });
@@ -105,7 +68,6 @@ export class UserListComponent implements OnInit {
             });
           });
 
-          // from(this.users).pipe(mergeMap((res:any)=>  this.apiNode.getUserFollowers(res.login))).subscribe(console.log);
         },
         (error) => {
           console.log('enter somthing.-->', error);
@@ -119,5 +81,6 @@ export class UserListComponent implements OnInit {
 
   totalFollowerList() {
     console.log('Total Followers:   ', JSON.stringify(this.usersFollowers));
+      this.usersFollowers= [{"name":"amresh","value":2},{"name":"amreshsharma","value":3},{"name":"yamresh","value":3},{"name":"xamry","value":4},{"name":"amresh1495","value":7},{"name":"amreshkris","value":3},{"name":"amreshk005","value":3},{"name":"amreshkumar","value":6},{"name":"NikkyAmresh","value":18},{"name":"ltbringer","value":30}]
   }
 }
