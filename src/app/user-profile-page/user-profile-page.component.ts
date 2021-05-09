@@ -19,7 +19,6 @@ export class UserProfilePageComponent implements OnInit {
   }
   getUserDetails(userId){
     this.apiNode.getUserDetail(userId).subscribe(res=>{
-      console.log("userDetails---->",res);
       this.userDetails=res;
       
     })
