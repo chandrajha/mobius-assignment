@@ -16,6 +16,8 @@ step-6  Open the browser and paste (http://localhost:4200) in address bar
 
 step-7 Now You can explore the application(Finish)
 
+# Open the following link to see the screenshot
+https://github.com/chandrajha/mobius-assignment/blob/main/Mobius_assignment_screenshot.pdf
 
 # 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
