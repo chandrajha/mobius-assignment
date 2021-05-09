@@ -9,7 +9,7 @@ export class ApiNodeService {
   constructor(private http:HttpClient) { }
 
 
-  serchUsers(searchText):Observable<any>{         
+  searchUsers(searchText):Observable<any>{         
       return this.http.get('https://api.github.com/search/users?q='+searchText);   
  
   }

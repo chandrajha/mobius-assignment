@@ -3,7 +3,7 @@
     <input [(ngModel)]="filterText" [formControl]='searchControl' style="width: 25%;" type="text" class="form-control" placeholder="Enter User Name">
     <div class="ml-3">total_count :{{total_count}}</div>
     <div class="ml-3">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        <button type="button" class="btn btn-primary" data-toggle="modal" (click)="totalFollowerList()" data-target="#exampleModalLong">
             Launch demo modal
           </button>
     </div>
