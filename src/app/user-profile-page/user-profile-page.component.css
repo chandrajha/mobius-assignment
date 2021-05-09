@@ -1,0 +1,15 @@
+.user-details {    
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.user-details-info{
+    border: 1px solid #0000008c;
+    height: 50vh;
+    width: 30vw;
+}
+.left-info{
+    height: calc(50vh - 40px);
+}

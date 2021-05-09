@@ -1,0 +1,53 @@
+
+<div class="d-flex justify-content-center mt-2">
+    <input [(ngModel)]="filterText" [formControl]='searchControl' style="width: 25%;" type="text" class="form-control" placeholder="Enter User Name">
+    <div class="ml-3">total_count :{{total_count}}</div>
+    <div class="ml-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Launch demo modal
+          </button>
+    </div>
+</div>
+<div class="container mt-2">
+    <div class="row justify-content-center">
+      <div class="col-sm-3 p-3" *ngFor="let user of users">
+        <div class="card" style="width: 14rem;" (click)="onSelect(user)">
+            <img class="card-img-top" [src]='user.avatar_url' alt="Card image cap" style="height: 10rem;">
+            <div>
+              <h5 class="card-title d-flex justify-content-center">{{user.login}}</h5>              
+            </div>
+          </div>
+      </div>      
+    </div>
+  </div>
+
+
+  <!-- ============================================================================================================= -->
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 650px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+         <table>
+             <tr>
+                 <td>
+                     <ngx-charts-bar-vertical [results]="productSales"></ngx-charts-bar-vertical>
+                 </td>
+             </tr>
+         </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
